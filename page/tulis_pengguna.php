@@ -30,20 +30,25 @@
 </head>
 
 <body>
-
     <!-- Awal gagal -->
-    <?php
-    if (isset($_GET['pesan'])) {
-        if ($_GET['pesan'] == "gagal") {
-            echo "
-            <div class='demo-banner py-3 text-white text-center font-weight-bold theme-bg-secondary text-white'>Beritakan secara
-            eksklusif dan kabarkan informasi secara cepat.
-        </div>";
-        }
-    }
-    ?>
+    <?php 
+	session_start();
+	if($_SESSION['level']==""){
+		header("location:masuk.php?pesan=ditolak");
+	}
+	?>
     <!-- Akhir Gagal -->
 
+    <!-- Awal Ambil Data -->
+    <?php
+        $con = mysqli_connect("localhost","root","","satuforum");
+        if (mysqli_connect_errno()){
+            echo "Koneksi database gagal : " . mysqli_connect_error();
+        }
+        $idsession = mysqli_query($con, "SELECT * FROM pengguna WHERE email='$_SESSION[email]'");
+        $datas = mysqli_fetch_array($idsession);
+    ?>
+    <!-- Akhir Ambil Data -->
 
     <!-- Awal Header -->
     <header class="header">
@@ -71,13 +76,12 @@
         <div class="container">
             <div class="row figure-holder" style="padding-bottom: 150px;">
                 <div class="col-12 col-md-6 pt-3 pt-md-4" style="padding-bottom: 80px;">
-                    <h2 class="site-headline font-weight-bold mt-lg-5 pt-lg-5">Masuk Pengguna <br>
+                    <a href="keluar.php"><span class="more-arrow">&larr;</span> Keluar</a>
+                    <h2 class="site-headline font-weight-bold mt-lg-5 pt-lg-5">Selama Datang <?=$datas['nama']?>, Di Forum Blog <br>
                     </h2>
                     <div class="site-tagline mb-3" style="font-size: 12pt;">Untuk dapat menulis di dalam fitur blog
                         bersama SatuForum, anda harus masuk pengguna.</div>
-                    <br>
-                    <a href="../index.php"><span class="more-arrow">&larr;</span> Kembali</a> | <a href="#">Saya belum
-                        memiliki akun <span class="more-arrow">&rarr;</span></a>
+                   
                 </div>
                 <div class="form-wrapper shadow-lg single-col-max-width mx-auto p-5">
                     <form name="frmUser" id="forum-form" class="forum-form" method="post" action="fct_masuk.php">

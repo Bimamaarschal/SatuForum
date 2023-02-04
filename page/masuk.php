@@ -36,13 +36,24 @@
     if (isset($_GET['pesan'])) {
         if ($_GET['pesan'] == "gagal") {
             echo "
-            <div class='demo-banner py-3 text-white text-center font-weight-bold theme-bg-secondary text-white'>Beritakan secara
-            eksklusif dan kabarkan informasi secara cepat.
+            <div class='demo-banner py-3 text-white text-center font-weight-bold theme-bg-secondary text-white'>Anda gagal masuk, cek email atau password lalu masuk kembali.
         </div>";
         }
     }
     ?>
     <!-- Akhir Gagal -->
+
+    <!-- Awal Ditolak -->
+    <?php
+    if (isset($_GET['pesan'])) {
+        if ($_GET['pesan'] == "ditolak") {
+            echo "
+            <div class='demo-banner py-3 text-white text-center font-weight-bold theme-bg-secondary text-white'>Anda perlu masuk, untuk dapat ke tampilan tulis blog.
+        </div>";
+        }
+    }
+    ?>
+    <!-- Akhir Ditolak -->
 
 
     <!-- Awal Header -->
@@ -84,22 +95,20 @@
                         <h3 class="text-left mb-4">Masuk</h3>
                         <div class="row g-3">
                             <div class="col-md-12" style="padding-bottom: 20px;">
-                                <label class="sr-only" for="nama">Nama</label>
-                                <input type="text" class="form-control" name="nama" id="nama"
-                                    placeholder="Silahkan masukan nama anda" minlength="2" required=""
-                                    aria-required="true">
-                            </div>
-                            <div class="col-md-6" style="padding-bottom: 20px;">
-                                <label class="sr-only" for="email">email</label>
+                                <div class="col-12">
+						            <div style="font-size: 12pt;" class="site-tagline mb-2">Email</div>
+						        </div>
                                 <input type="email" class="form-control" name="email" id="email"
-                                    placeholder="Silahkan masukan email anda" minlength="2" required=""
+                                    placeholder="--@--.--" minlength="2" required=""
                                     aria-required="true">
                             </div>
 
-                            <div class="col-md-6" style="padding-bottom: 20px;">
-                                <label class="sr-only" for="password">password</label>
+                            <div class="col-md-12" style="padding-bottom: 20px;">
+                                <div class="col-12">
+						            <div style="font-size: 12pt;" class="site-tagline mb-2">Password</div>
+						        </div>
                                 <input type="password" class="form-control" id="password" name="password"
-                                    placeholder="Silahkan masukan password anda" minlength="2" required=""
+                                    placeholder="***" minlength="2" required=""
                                     aria-required="true">
                             </div>
                             <div class="col-12">

@@ -1,41 +1,45 @@
 <!-- PHP - Fungsi -->
 
-<?php
-require_once __DIR__ . '../../lib/DataSource.php';
-$database = new DataSource();
-$sql = "SELECT * FROM forumcepat ORDER BY id DESC";
-$result = $database->select($sql);
+<?php 
+$con = mysqli_connect("localhost","root","","satuforum");
+if (mysqli_connect_errno()){
+	echo "Koneksi database gagal : " . mysqli_connect_error();
+}
 ?>
 
-
 <?php
+
 session_start();
-$username = $_POST['username'];
+$email = $_POST['email'];
 $password = $_POST['password'];
 
-$login = mysqli_query($koneksi, "select * from user where username='$username' and password='$password'");
+$datalg = "SELECT * FROM pengguna WHERE email='$email' and password='$password'";
+$login = mysqli_query($con, $datalg);
 $cek = mysqli_num_rows($login);
+
 if ($cek > 0) {
 
     $data = mysqli_fetch_assoc($login);
     if ($data['level'] == "admin") {
-        $_SESSION['username'] = $username;
+        $_SESSION['email'] = $email;
         $_SESSION['level'] = "admin";
-        header("location:halaman_admin.php");
-    } else if ($data['level'] == "pegawai") {
-        $_SESSION['username'] = $username;
-        $_SESSION['level'] = "pegawai";
-        header("location:halaman_pegawai.php");
-    } else if ($data['level'] == "pengurus") {
-        $_SESSION['username'] = $username;
-        $_SESSION['level'] = "pengurus";
-        header("location:halaman_pengurus.php");
+        header("location:admin.php");
+
+    } else if ($data['level'] == "pengguna") {
+        $_SESSION['email'] = $email;
+        $_SESSION['level'] = "pengguna";
+        header("location:tulis_pengguna.php");
+
+    } else if ($data['level'] == "tamu") {
+        $_SESSION['email'] = $email;
+        $_SESSION['level'] = "tamu";
+        header("location:tulis_tamu.php");
 
     } else {
-        header("location:index.php?pesan=gagal");
+        header("location:masuk.php?pesan=gagal");
     }
 } else {
-    header("location:index.php?pesan=gagal");
+    header("location:masuk.php?pesan=gagal");
 }
 ?>
 
