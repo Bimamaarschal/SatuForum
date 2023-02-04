@@ -1,7 +1,6 @@
 <?php
 class DataSource
-{
-    
+{ 
     const HOST = 'localhost';
     
     const USERNAME = 'root';
