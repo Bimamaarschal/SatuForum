@@ -1,5 +1,4 @@
 <!-- PHP - Fungsi -->
-
 <?php
 require_once __DIR__ . '/lib/DataSource.php';
 $database = new DataSource();
@@ -107,7 +106,7 @@ $result = $database->select($sql);
 										</div>
 
 										<div class="source media">
-											<img class="source-profile rounded-circle mr-3" src="assets/images/s1.png" alt="" />
+											
 											<div class="source-info media-body pt-3">
 												<div><i class="fa fa-user-circle"></i>&nbsp; <?php echo $result[$key]["nama"]; ?></div>
 												<div><i class="fa fa-calendar"></i>&nbsp; <?php echo $result[$key]["tanggal"]; ?> &nbsp; <i class="fa fa-clock"></i>&nbsp; <?php echo $result[$key]["waktu"]; ?></div>
@@ -152,10 +151,10 @@ $result = $database->select($sql);
 	}
 	?>
 
-	<section class="contact-form-section pb-5" style="padding-top: 100px;">
+	<section class="forum-form-section pb-5" style="padding-top: 100px;">
 		<div class="container pb-5">
 			<div class="form-wrapper shadow-lg single-col-max-width mx-auto p-5">
-				<form name="frmUser" id="contact-form" class="contact-form" method="post" action="">
+				<form name="frmUser" id="forum-form" class="forum-form" method="post" action="">
 					<h3 class="text-left mb-4">Forum Cepat</h3>
 					<div class="row g-3">
 						<div class="col-md-6" style="padding-bottom: 20px;">
@@ -218,11 +217,12 @@ $result = $database->select($sql);
 		<div class="container">
 			<h3 class="text-white font-weight-bold mb-3">Blog bersama, tulis blog di dalam satu ruang web yang sama</h3>
 			<a class="btn theme-btn theme-btn-ghost theme-btn-on-bg mt-4"
-				href="#">Saya Ingin Menulis</a>
+				href="page/masuk.php">Saya Ingin Menulis</a>
 		</div>
 	</section>
 	<!-- Akhir Blog Tambah -->
 
+	<!-- Awal Blog Teratas-->
 	<section class="benefits-section py-5">
 
 		<div class="container py-lg-5">
@@ -246,8 +246,10 @@ $result = $database->select($sql);
 			</div>
 		</div>
 
-	</section><!--//benefits-section-->
+	</section>
+	<!-- Akhir Blog Teratas-->
 
+	<!-- Awal Kata-kata-->
 	<section class="cta-section py-5 theme-bg-secondary text-center">
 		<div class="container">
 			<h3 class="text-white font-weight-bold">"Seorang penulis profesional adalah seorang amatir yang tidak berhenti."</h3>
@@ -255,22 +257,21 @@ $result = $database->select($sql);
 
 		</div>
 	</section>
+	<!-- Akhir Kata-kata-->
 
-
-
-
+	<!-- Awal Footer-->
 	<footer class="footer theme-bg-primary" style="padding-top: 50px;">
 		<div class="footer-bottom text-center pb-5">
-			<small class="copyright">Dibuat Oleh : Bima Maarschal &nbsp; | &nbsp; Code : <i class="fab fa-github fa-fw"
-					style="color: #57B147;"></i>Bimamaarschal</small>
+			<small class="copyright">Dibuat Oleh : Bima Maarschal &nbsp; | &nbsp; <a href="https://github.com/Bimamaarschal/SatuForum">Code : <i class="fab fa-github fa-fw"
+                    style="color: #57B147;"></i>Bimamaarschal</a></small>
 		</div>
 	</footer>
+	<!-- Akhir Footer-->
 
 	<!-- Javascript -->
 	<script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="assets/plugins/popper.min.js"></script>
 	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
 	<!-- Page Specific JS -->
 	<script type="text/javascript" src="assets/plugins/jquery-flipster/dist/jquery.flipster.min.js"></script>
 	<script type="text/javascript" src="assets/js/flipster-custom.js"></script>
