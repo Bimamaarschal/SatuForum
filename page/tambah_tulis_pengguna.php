@@ -70,11 +70,10 @@
         <div class="container">
             <div class="row figure-holder" style="padding-bottom: 150px;">
                 <div class="col-12 col-md-6 pt-3 pt-md-4" style="padding-bottom: 80px;">
-                    <a href="keluar.php"><span class="more-arrow">&larr;</span> Keluar</a>
-                    <h2 class="site-headline font-weight-bold mt-lg-5 pt-lg-5">Selama Datang
-                        <?= $datas['nama'] ?>, Di Forum Blog <br>
+                    <a href="tulis_pengguna.php"><span class="more-arrow">&larr;</span> kembali</a>
+                    <h2 class="site-headline font-weight-bold mt-lg-5 pt-lg-5">Anda dapat menulis di blog terbuka ini <br>
                     </h2>
-                    <div class="site-tagline mb-3" style="font-size: 12pt;">Anda sudah masuk, sebagai pengguna anda dapat menulis blog bersama, setiap tulisan akan terpatau secara publik</div>
+                    <div class="site-tagline mb-3" style="font-size: 12pt;">Pelanggaran ketentuan umum pada tulis akan di hapus oleh admin dari SatuForum.</div>
 
                 </div>
                 <div class="form-wrapper shadow-lg single-col-max-width mx-auto p-5">
@@ -107,6 +106,17 @@
                                         <td>20 Desember 2023</td>
                                         <td>Bima</td>
                                         <td><a class="text-dark" href="#"><i class="fa fa-file"></i></a>&nbsp;<a class="text-dark" href="#"><i class="fa fa-edit"></i></a>&nbsp;<a class="text-dark" href="#"><i class="fa fa-trash"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td colspan="2">Larry the Bird</td>
+                                        <td>@twitter</td>
                                     </tr>
                                 </tbody>
                             </table>

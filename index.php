@@ -84,7 +84,7 @@ $result = $database->select($sql);
 						<?php echo date('l, d-m-Y h:i a'); ?>
 
 					</div>
-					<div style="font-size: 12pt;" class="site-tagline mb-1">Berita yang baru ditambahkan, di
+					<div style="font-size: 12pt;" class="site-tagline mb-1">Berita yang baru ditambahkan, akan di
 						tampilkan di bagian akhir slide</div>
 				</div>
 				<div id="flipster-carousel" class="flipster-carousel pt-md-3">
