@@ -1,12 +1,15 @@
 <!-- PHP - Fungsi -->
 
+<!-- Awal Koneksi -->
 <?php 
 $con = mysqli_connect("localhost","root","","satuforum");
 if (mysqli_connect_errno()){
 	echo "Koneksi database gagal : " . mysqli_connect_error();
 }
 ?>
+<!-- Akhir Koneksi -->
 
+<!-- Awal Masuk Pengguna -->
 <?php
 
 session_start();
@@ -28,7 +31,7 @@ if ($cek > 0) {
     } else if ($data['level'] == "pengguna") {
         $_SESSION['email'] = $email;
         $_SESSION['level'] = "pengguna";
-        header("location:tulis_pengguna.php");
+        header("location:../tulis_pengguna/tulis_pengguna.php");
 
     } else if ($data['level'] == "tamu") {
         $_SESSION['email'] = $email;
@@ -42,5 +45,6 @@ if ($cek > 0) {
     header("location:masuk.php?pesan=gagal");
 }
 ?>
+<!-- Akhir Masuk Pengguna -->
 
 

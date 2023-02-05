@@ -91,7 +91,7 @@
                         memiliki akun <span class="more-arrow">&rarr;</span></a>
                 </div>
                 <div class="form-wrapper shadow-lg single-col-max-width mx-auto p-5">
-                    <form name="frmUser" id="forum-form" class="forum-form" method="post" action="fct_masuk.php">
+                    <form name="frmUser" id="forum-form" class="forum-form" method="post" action="fungsi/fct_masuk.php">
                         <h3 class="text-left mb-4">Masuk</h3>
                         <div class="row g-3">
                             <div class="col-md-12" style="padding-bottom: 20px;">

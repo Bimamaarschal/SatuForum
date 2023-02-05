@@ -17,9 +17,9 @@
         integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
         crossorigin="anonymous"></script>
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="../assets/plugins/jquery-flipster/dist/jquery.flipster.min.css">
+    <link rel="stylesheet" href="../../assets/plugins/jquery-flipster/dist/jquery.flipster.min.css">
     <!-- Satu Forum CSS -->
-    <link id="theme-style" rel="stylesheet" href="../assets/css/style.css">
+    <link id="theme-style" rel="stylesheet" href="../../assets/css/style.css">
 
 </head>
 
@@ -28,7 +28,7 @@
     <?php
     session_start();
     if ($_SESSION['level'] == "") {
-        header("location:masuk.php?pesan=ditolak");
+        header("location:../masuk.php?pesan=ditolak");
     }
     ?>
     <!-- Akhir Gagal -->
@@ -50,7 +50,7 @@
             <div class="container position-relative">
                 <nav class="navbar navbar-expand-lg">
                     <h1 class="site-logo"><a class="navbar-brand" href="/"><img style="height: 100px; width: 100px;"
-                                class="logo-icon" src="../assets/images/logo.png" alt="logo"></a></h1>
+                                class="logo-icon" src="../../assets/images/logo.png" alt="logo"></a></h1>
                 </nav>
                 <ul class="social-list list-inline mb-0 position-absolute">
                     <li class="list-inline-item"><a class="text-dark" href="#"><i class="fab fa-twitter fa-fw"></i></a>
@@ -70,7 +70,7 @@
         <div class="container">
             <div class="row figure-holder" style="padding-bottom: 150px;">
                 <div class="col-12 col-md-6 pt-3 pt-md-4" style="padding-bottom: 80px;">
-                    <a href="keluar.php"><span class="more-arrow">&larr;</span> Keluar</a>
+                    <a href="../keluar.php"><span class="more-arrow">&larr;</span> Keluar</a>
                     <h2 class="site-headline font-weight-bold mt-lg-5 pt-lg-5">Selama Datang
                         <?= $datas['nama'] ?>, Di Forum Blog <br>
                     </h2>
@@ -141,12 +141,12 @@
     <!-- Akhir Footer-->
 
     <!-- Javascript -->
-    <script type="text/javascript" src="../assets/plugins/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../assets/plugins/popper.min.js"></script>
-    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/popper.min.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- Page Specific JS -->
-    <script type="text/javascript" src="../assets/plugins/jquery-flipster/dist/jquery.flipster.min.js"></script>
-    <script type="text/javascript" src="../assets/js/flipster-custom.js"></script>
+    <script type="text/javascript" src="../../assets/plugins/jquery-flipster/dist/jquery.flipster.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/flipster-custom.js"></script>
 </body>
 
 </html>
