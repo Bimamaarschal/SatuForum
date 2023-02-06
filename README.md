@@ -5,7 +5,7 @@
 # Oleh Bimamaarschal
 
 <p align="center">
-  <img src="assets/images/readme/logo.png" width="350" alt="">
+  <img src="assets/images/readme/logo.png" width="150" alt="">
   <p align="center">
     <strong>Semua Kode terdokumentasi di <a href="https://github.com/Bimamaarschal/SatuForum">https://github.com/Bimamaarschal/SatuForum</a></strong>.
   </p>
