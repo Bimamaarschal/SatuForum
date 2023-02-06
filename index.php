@@ -81,7 +81,7 @@ $result = $database->select($sql);
 					<br>
 					<div class="site-tagline mb-2" style="font-size: 12pt;"><i
 							class="fa fa-spinner fa-spin fa-1x fa-fw"></i>&nbsp; Aktif :
-						<?php echo date('l, d-m-Y h:i a'); ?>
+						<?php echo date('l, d-m-Y'); ?>
 
 					</div>
 					<div style="font-size: 12pt;" class="site-tagline mb-1">Berita yang baru ditambahkan, akan di
@@ -106,11 +106,19 @@ $result = $database->select($sql);
 										</div>
 
 										<div class="source media">
-											
+
 											<div class="source-info media-body pt-3">
-												<div><i class="fa fa-user-circle"></i>&nbsp; <?php echo $result[$key]["nama"]; ?></div>
-												<div><i class="fa fa-calendar"></i>&nbsp; <?php echo $result[$key]["tanggal"]; ?> &nbsp; <i class="fa fa-clock"></i>&nbsp; <?php echo $result[$key]["waktu"]; ?></div>
-												<div><i class="fa fa-map-pin"></i>&nbsp; <?php echo $result[$key]["lokasi"]; ?></div>
+												<div><i class="fa fa-user-circle"></i>&nbsp;
+													<?php echo $result[$key]["nama"]; ?>
+												</div>
+												<div><i class="fa fa-calendar"></i>&nbsp;
+													<?php echo $result[$key]["tanggal"]; ?> &nbsp; <i
+														class="fa fa-clock"></i>&nbsp;
+													<?php echo $result[$key]["waktu"]; ?>
+												</div>
+												<div><i class="fa fa-map-pin"></i>&nbsp;
+													<?php echo $result[$key]["lokasi"]; ?>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -159,15 +167,13 @@ $result = $database->select($sql);
 					<div class="row g-3">
 						<div class="col-md-6" style="padding-bottom: 20px;">
 							<label class="sr-only" for="tanggal">tanggal</label>
-							<input type="date"  class="form-control" name="tanggal" id="tanggal"
-								minlength="2" required=""
-								aria-required="true" >
+							<input type="date" class="form-control" name="tanggal" id="tanggal" minlength="2"
+								required="" aria-required="true">
 						</div>
 						<div class="col-md-6" style="padding-bottom: 20px;">
 							<label class="sr-only" for="waktu">waktu</label>
-							<input type="time"  class="form-control" name="waktu" id="waktu"
-								minlength="2" required=""
-								aria-required="true" >
+							<input type="time" class="form-control" name="waktu" id="waktu" minlength="2" required=""
+								aria-required="true">
 						</div>
 						<div class="col-md-6" style="padding-bottom: 20px;">
 							<label class="sr-only" for="nama">Nama</label>
@@ -193,14 +199,17 @@ $result = $database->select($sql);
 								rows="10" required="" aria-required="true"></textarea>
 						</div>
 						<div class="col-12">
-						<div style="font-size: 12pt;" class="site-tagline mb-3"> Anda akan meverfikasi berita secara sah</div>
+							<div style="font-size: 12pt;" class="site-tagline mb-3"> Anda akan meverfikasi berita secara
+								sah</div>
 						</div>
 						<div class="col-6">
-						<input type="radio" name="ket" value="Saya verifikasi berita ini">&nbsp; Saya verifikasi berita ini
+							<input type="radio" name="ket" value="Saya verifikasi berita ini">&nbsp; Saya verifikasi
+							berita ini
 						</div>
-						<div class="col-6 mb-5" >
-  						<input type="radio" name="ket" value="Saya tidak dapat verifikasi berita ini">&nbsp; Saya tidak dapat verifikasi berita ini
-						</div>	
+						<div class="col-6 mb-5">
+							<input type="radio" name="ket" value="Saya tidak dapat verifikasi berita ini">&nbsp; Saya
+							tidak dapat verifikasi berita ini
+						</div>
 						<div class="col-12">
 							<button type="submit" name="submit" value="Add"
 								class="btn w-100 btn-primary py-2">Sebarkan</button>
@@ -216,8 +225,7 @@ $result = $database->select($sql);
 	<section class="cta-section py-5 theme-bg-secondary text-center">
 		<div class="container">
 			<h3 class="text-white font-weight-bold mb-3">Blog bersama, tulis blog di dalam satu ruang web yang sama</h3>
-			<a class="btn theme-btn theme-btn-ghost theme-btn-on-bg mt-4"
-				href="page/masuk.php">Saya Ingin Menulis</a>
+			<a class="btn theme-btn theme-btn-ghost theme-btn-on-bg mt-4" href="page/masuk.php">Saya Ingin Menulis</a>
 		</div>
 	</section>
 	<!-- Akhir Blog Tambah -->
@@ -226,24 +234,54 @@ $result = $database->select($sql);
 	<section class="benefits-section py-5">
 
 		<div class="container py-lg-5">
-			<h3 class="mb-5 text-center font-weight-bold">Blog Teratas</h3>
-				<div class="col-12 col-md-12 col-xl-12 pr-xl-3 pt-md-3">
-					<div class="card rounded border-0 shadow-lg  mb-5">
-						<div class="card-body p-4">
-							<h5 class="card-title"><i
-									class="far fa fa-folder-open mr-2 mr-lg-3 text-primary fa-lg fa-fw"></i>Daftar 10 Kota Paling Berbahaya di Dunia 2023, Meksiko Paling Mengerikan</h5>
-							<p class="card-text"> Mengunjungi tempat baru di berbagai belahan bumi memang menyenangkan. Selain sebagai sarana hiburan, kesempatan mempelajari budaya lokal juga menjadi pengalaman berharga yang tak terlupakan. <a
-									href="#"
-									target="_blank"> Lihat lengkap</a>. </p>
-							<a href="#">Baca selanjutnya <span class="more-arrow">&rarr;</span></a>
-						</div>
-					</div>
-				</div>
-			</div>
+			<h3 class="mb-5 text-center font-weight-bold">Blog Terbaru</h3>
+			<div class="col-12 col-md-12 col-xl-12 pr-xl-3 pt-md-3">
+				<?php
+				require_once __DIR__ . '/lib/DataSource.php';
+				$database = new DataSource();
+				$data_blog = "SELECT * FROM tulispengguna ORDER BY idtulis DESC  LIMIT 2";
+				$blog = $database->select($data_blog);
+				?>
+				<?php
+				sort($blog);
+				if (is_array($blog) || is_object($blog)) {
+					foreach ($blog as $key => $value) {
+						?>
+						<div class="card rounded border-0 shadow-lg  mb-5">
 
-			<div class="pt-3 text-center">
-				<a class="btn btn-primary theme-btn theme-btn-ghost font-weight-bold" href="#">Baca Selanjutnya</a>
+							<div class="card-body p-4">
+								<h5 class="card-title"><i
+										class="far fa fa-folder-open mr-2 mr-lg-3 text-primary fa-lg fa-fw"></i>
+									<?php echo $blog[$key]["judul"]; ?>
+								</h5>
+								<div class="source media">
+									<div class="source-info media-body pt-1">
+										<div><i class="fa fa-user-circle"></i>&nbsp;
+											<?php echo $blog[$key]["pengguna"]; ?> &nbsp; <i class="fa fa-calendar"></i>&nbsp;
+											<?php echo $blog[$key]["tanggal"]; ?>
+
+										</div>
+									</div>
+								</div>
+								<p class="card-text"><br>
+									<?php echo $blog[$key]["isi"]; ?>
+								</p>
+
+								<a href="page/baca_blog.php?id10=<?php echo $blog[$key]["idtulis"]; ?>">Baca selanjutnya <span
+										class="more-arrow">&rarr;</span></a>
+							</div>
+
+						</div>
+					<?php
+					}
+				}
+				?>
 			</div>
+		</div>
+
+		<div class="pt-3 text-center">
+			<a class="btn btn-primary theme-btn theme-btn-ghost font-weight-bold" href="page/blog.php">Selengkapnya</a>
+		</div>
 		</div>
 
 	</section>
@@ -252,7 +290,8 @@ $result = $database->select($sql);
 	<!-- Awal Kata-kata-->
 	<section class="cta-section py-5 theme-bg-secondary text-center">
 		<div class="container">
-			<h3 class="text-white font-weight-bold">"Seorang penulis profesional adalah seorang amatir yang tidak berhenti."</h3>
+			<h3 class="text-white font-weight-bold">"Seorang penulis profesional adalah seorang amatir yang tidak
+				berhenti."</h3>
 			<h3 class="text-white font-weight-bold mb-3" style="font-size: 12pt;">Richard Bach</h3>
 
 		</div>
@@ -262,8 +301,9 @@ $result = $database->select($sql);
 	<!-- Awal Footer-->
 	<footer class="footer theme-bg-primary" style="padding-top: 50px;">
 		<div class="footer-bottom text-center pb-5">
-			<small class="copyright">Dibuat Oleh : Bima Maarschal &nbsp; | &nbsp; <a href="https://github.com/Bimamaarschal/SatuForum">Code : <i class="fab fa-github fa-fw"
-                    style="color: #57B147;"></i>Bimamaarschal</a></small>
+			<small class="copyright">Dibuat Oleh : Bima Maarschal &nbsp; | &nbsp; <a
+					href="https://github.com/Bimamaarschal/SatuForum">Code : <i class="fab fa-github fa-fw"
+						style="color: #57B147;"></i>Bimamaarschal</a></small>
 		</div>
 	</footer>
 	<!-- Akhir Footer-->

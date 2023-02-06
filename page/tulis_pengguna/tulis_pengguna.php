@@ -42,7 +42,7 @@
     $idsession = mysqli_query($con, "SELECT * FROM pengguna WHERE email='$_SESSION[email]'");
     $datas = mysqli_fetch_array($idsession);
 
-    
+
 
     ?>
     <!-- Akhir Ambil Data -->
@@ -77,7 +77,8 @@
                     <h2 class="site-headline font-weight-bold mt-lg-5 pt-lg-5">Selamat Datang
                         <?= $datas['nama'] ?> <br> Di Forum Blog <br>
                     </h2>
-                    <div class="site-tagline mb-3" style="font-size: 12pt;">Anda sudah masuk, sebagai pengguna anda dapat menulis blog bersama, setiap tulisan akan terpatau secara publik</div>
+                    <div class="site-tagline mb-3" style="font-size: 12pt;">Anda sudah masuk, sebagai pengguna anda
+                        dapat menulis blog bersama, setiap tulisan akan terpatau secara publik</div>
 
                 </div>
                 <div class="form-wrapper shadow-lg single-col-max-width mx-auto p-5">
@@ -88,11 +89,11 @@
                                 Tulisan</a>
                         </div>
                         <div class="col-6">
-                            <button type="submit" name="submit" value="submit" class="btn w-100 btn-secondary py-2">Lihat
-                                Blog</button>
+                        <a href="../blog.php" class="btn w-100 btn-secondary py-2">Lihat
+                                Blog</a>
                         </div>
 
-                        <div class="col-12" style="padding-top: 50px;" >
+                        <div class="col-12" style="padding-top: 50px;">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
@@ -102,20 +103,20 @@
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
-                                <?php  
-    $datatabel = mysqli_query($con, "SELECT * FROM tulispengguna WHERE pengguna='$datas[nama]'");
-    while($data_tulis = mysqli_fetch_array($datatabel)) {  
-        echo "<tbody>";       
-        echo "<tr>";
-        echo "<td>".$data_tulis['idtulis']."</td>";
-        echo "<td>".$data_tulis['judul']."</td>";
-        echo "<td>".$data_tulis['tanggal']."</td>";  
-        echo "<td><a class='text-dark' href='baca_tulis_pengguna.php?id10=$data_tulis[idtulis]'><i class='fa fa-file'></i></a>&nbsp;<a class='text-dark' href='edit_tulis_pengguna.php?id11=$data_tulis[idtulis]'><i class='fa fa-edit'></i></a>&nbsp;<a class='text-dark' href='../fungsi/fct_hapus_tulis_pengguna.php?id12=$data_tulis[idtulis]'><i class='fa fa-trash'></i></a></td>
+                                <?php
+                                $datatabel = mysqli_query($con, "SELECT * FROM tulispengguna WHERE pengguna='$datas[nama]'");
+                                while ($data_tulis = mysqli_fetch_array($datatabel)) {
+                                    echo "<tbody>";
+                                    echo "<tr>";
+                                    echo "<td>" . $data_tulis['idtulis'] . "</td>";
+                                    echo "<td>" . $data_tulis['judul'] . "</td>";
+                                    echo "<td>" . $data_tulis['tanggal'] . "</td>";
+                                    echo "<td><a class='text-dark' href='baca_tulis_pengguna.php?id10=$data_tulis[idtulis]'><i class='fa fa-file'></i></a>&nbsp;<a class='text-dark' href='edit_tulis_pengguna.php?id11=$data_tulis[idtulis]'><i class='fa fa-edit'></i></a>&nbsp;<a class='text-dark' href='../fungsi/fct_hapus_tulis_pengguna.php?id12=$data_tulis[idtulis]'><i class='fa fa-trash'></i></a></td>
         </tr>
         </tbody>
-        ";        
-    }
-    ?>
+        ";
+                                }
+                                ?>
                             </table>
                         </div>
 
