@@ -5,8 +5,7 @@
 # Bimamaarschal
 
 <p align="center">
-  <img src="assets/images/logo.png" width="350" alt="PHP Insights">
-  <img src="assets/images/readme/1.png" width="882" alt="PHP Insights Preview">
+  <img src="assets/images/readme/logo.png" width="350" alt="">
   <p align="center">
     <strong>Semua Kode terdukumentasi di <a href="https://github.com/Bimamaarschal/SatuForum">https://github.com/Bimamaarschal/SatuForum</a></strong>.
   </p>
@@ -33,6 +32,8 @@ Database sql
 # Pindahkan file ke htdocs XAMPP:
 Jalankan file index.php dengan sistem server localhost
 
+```
+
 ## ✨ Berjalan
 -- **PHP** versi 8.2.0
 -- **PHPMyAdmin** versi 5.2.0
@@ -40,10 +41,19 @@ Jalankan file index.php dengan sistem server localhost
 -- **SQLI**
 
 ## ✨ Fitur
+<img src="assets/images/readme/1.png" width="720" alt="">
 
 - Satu Forum **Forum Cepat** dan **Blog Bersama**
+<img src="assets/images/readme/2.png" width="720" alt="">
+
 - Forum cepat adalah forum informasi yang memungkinkan pengguna langsung dapat menambahkan informasi ke **SatuForum**
+
+<img src="assets/images/readme/3.png" width="720" alt="">
+
 - Daftar akun/ Masuk akun/ edit Blog/ hapus Blog (CRUD)
+
+<img src="assets/images/readme/4.png" width="720" alt="">
+
 - Simple sistem
 - Responsive desain
 
@@ -53,5 +63,4 @@ Jalankan file index.php dengan sistem server localhost
 Klik bintang
 
 Hubungi bimamaarschal@gmail.com untuk informasi yang dibutuhkan.
-
 Terima kasih.
