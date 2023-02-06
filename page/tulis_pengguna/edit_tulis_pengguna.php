@@ -24,29 +24,9 @@
 </head>
 
 <body>
-    <!-- Awal gagal -->
     <?php
-    session_start();
-    if ($_SESSION['level'] == "") {
-        header("location:../masuk.php?pesan=ditolak");
-    }
+    include_once("../fungsi/fct_edit_tulis_pengguna.php");
     ?>
-    <!-- Akhir Gagal -->
-
-    <!-- Awal Ambil Data -->
-    <?php
-    $con = mysqli_connect("localhost", "root", "", "satuforum");
-    if (mysqli_connect_errno()) {
-        echo "Koneksi database gagal : " . mysqli_connect_error();
-    }
-    $idsession = mysqli_query($con, "SELECT * FROM pengguna WHERE email='$_SESSION[email]'");
-    $datas = mysqli_fetch_array($idsession);
-
-    
-
-    ?>
-    <!-- Akhir Ambil Data -->
-
     <!-- Awal Header -->
     <header class="header">
         <div class="branding">
@@ -73,53 +53,60 @@
         <div class="container">
             <div class="row figure-holder" style="padding-bottom: 150px;">
                 <div class="col-12 col-md-6 pt-3 pt-md-4" style="padding-bottom: 80px;">
-                    <a href="../keluar.php"><span class="more-arrow">&larr;</span> Keluar</a>
-                    <h2 class="site-headline font-weight-bold mt-lg-5 pt-lg-5">Selamat Datang
-                        <?= $datas['nama'] ?> <br> Di Forum Blog <br>
+                    <a href="tulis_pengguna.php"><span class="more-arrow">&larr;</span> kembali</a>
+                    <h2 class="site-headline font-weight-bold mt-lg-5 pt-lg-5">Anda Akan Edit Tulisan
+                        <br>
                     </h2>
-                    <div class="site-tagline mb-3" style="font-size: 12pt;">Anda sudah masuk, sebagai pengguna anda dapat menulis blog bersama, setiap tulisan akan terpatau secara publik</div>
+                    <div class="site-tagline mb-3" style="font-size: 12pt;">Pelanggaran ketentuan umum pada tulis akan
+                        di hapus oleh admin dari SatuForum.</div>
 
                 </div>
                 <div class="form-wrapper shadow-lg single-col-max-width mx-auto p-5">
-                    <h3 class="text-left mb-4">Data Tulisan</h3>
-                    <div class="row g-3">
-                        <div class="col-6">
-                            <a href="tambah_tulis_pengguna.php" class="btn w-100 btn-primary py-2">Tambah
-                                Tulisan</a>
-                        </div>
-                        <div class="col-6">
-                            <button type="submit" name="submit" value="submit" class="btn w-100 btn-secondary py-2">Lihat
-                                Blog</button>
-                        </div>
+                    <h3 class="text-left mb-4">Edit Tulisan : <?php echo $idtulis_edit;?></h3>
+                    <form name="frmUser" id="forum-form" class="forum-form" method="post" action="">
+                        <div class="row g-3">
+                            <div class="col-md-12" style="padding-bottom: 20px;">
+                                <label class="sr-only" for="idtulis">ID Tulisan</label>
+                                <input type="text" class="form-control" id="idtulis" name="idtulis" value="<?php echo $idtulis_edit;?>" placeholder="ID<?php date('dmYhi'); ?>" minlength="2" required=""
+                                    aria-required="true" disabled>
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 20px;">
+                                <label class="sr-only" for="tanggal">tanggal</label>
+                                <input type="date" class="form-control" name="tanggal" id="tanggal" minlength="2"
+                                value="<?php echo $tanggal_edit;?>" required="" aria-required="true" disabled>
+                            </div>
+                            <div class="col-md-6" style="padding-bottom: 20px;">
+                                <label class="sr-only" for="pengguna">pengguna</label>
+                                <input type="text" class="form-control" name="pengguna" id="pengguna" minlength="2" value="<?= $datas['nama'] ?>"
+                                    required="" aria-required="true" disabled>
+                            </div>
+                            <div class="col-md-12" style="padding-bottom: 20px;">
+                                <label class="sr-only" for="judul">judul</label>
+                                <input type="text" class="form-control" name="judul" id="judul"
+                                value="<?php echo $judul_edit;?>"  placeholder="Silahkan tuliskan judul tulisan anda" minlength="2" required=""
+                                    aria-required="true">
+                            </div>           
+                            <div class="col-12" style="padding-bottom: 20px;">
+                                <label class="sr-only" for="isi">Isi Berita, Baris Paragraf 1</label>
+                                <textarea class="form-control" id="isi" name="isi"
+                                    rows="10" ><?php echo $isi_edit;?></textarea>
+                            </div>
 
-                        <div class="col-12" style="padding-top: 50px;" >
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Id</th>
-                                        <th scope="col">Judul</th>
-                                        <th scope="col">Tanggal</th>
-                                        <th scope="col">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <?php  
-    $datatabel = mysqli_query($con, "SELECT * FROM tulispengguna WHERE pengguna='$datas[nama]'");
-    while($data_tulis = mysqli_fetch_array($datatabel)) {  
-        echo "<tbody>";       
-        echo "<tr>";
-        echo "<td>".$data_tulis['idtulis']."</td>";
-        echo "<td>".$data_tulis['judul']."</td>";
-        echo "<td>".$data_tulis['tanggal']."</td>";  
-        echo "<td><a class='text-dark' href='#'><i class='fa fa-file'></i></a>&nbsp;<a class='text-dark' href='edit_tulis_pengguna.php?id11=$data_tulis[idtulis]'><i class='fa fa-edit'></i></a>&nbsp;<a class='text-dark' href='../fungsi/fct_hapus_tulis_pengguna.php?id12=$data_tulis[idtulis]'><i class='fa fa-trash'></i></a></td>
-        </tr>
-        </tbody>
-        ";        
-    }
-    ?>
-                            </table>
-                        </div>
+                            <div class="col-12" style="padding-bottom: 20px;">
+                                <label class="sr-only" for="isi2">Isi Berita, Baris Paragraf 2</label>
+                                <textarea class="form-control" id="isi2" name="isi2" 
+                                    rows="10" ><?php echo $isi2_edit;?></textarea>
+                            </div>
 
-                    </div>
+                            <div class="col-12">
+                                <button type="submit" name="submit"
+                                    class="btn w-100 btn-primary py-2">Perbarui</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+
                 </div>
             </div>
         </div>
@@ -147,8 +134,8 @@
     </footer>
     <!-- Akhir Footer-->
 
-    <!-- Javascript -->
-    <script type="text/javascript" src="../../assets/plugins/jquery-3.3.1.min.js"></script>
+     <!-- Javascript -->
+     <script type="text/javascript" src="../../assets/plugins/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../../assets/plugins/popper.min.js"></script>
     <script type="text/javascript" src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- Page Specific JS -->
