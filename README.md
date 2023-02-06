@@ -2,18 +2,18 @@
 
 ------
 
-# Bimamaarschal
+# Oleh Bimamaarschal
 
 <p align="center">
   <img src="assets/images/readme/logo.png" width="350" alt="">
   <p align="center">
-    <strong>Semua Kode terdukumentasi di <a href="https://github.com/Bimamaarschal/SatuForum">https://github.com/Bimamaarschal/SatuForum</a></strong>.
+    <strong>Semua Kode terdokumentasi di <a href="https://github.com/Bimamaarschal/SatuForum">https://github.com/Bimamaarschal/SatuForum</a></strong>.
   </p>
 </p>
 
-**PHP Insights** Satu Forum adalah aplikasi berbasis Website PHP, yang berfungsi sebagai media menulis kabar secara cepat, dengan status verifikasi atau anonim. Adapun fitur lain yaitu Blog, blog adalah fitur menulis informasi, penulis pada fitur blog harus mendaftar dan masuk untuk dapat memulai menulis.
+**SatuForum** Satu Forum adalah aplikasi berbasis Website PHP, yang berfungsi sebagai media menulis kabar secara cepat, dengan status verifikasi atau anonim. Adapun fitur lain yaitu Blog, blog adalah fitur menulis informasi, penulis pada fitur blog harus mendaftar dan masuk untuk dapat memulai menulis.
 
-## 🚀 cara Menjalankan Satu Forum
+## 🚀 Cara Menjalankan Satu Forum
 
 ```
 # Pull Projek dari Github 
@@ -58,9 +58,10 @@ Jalankan file index.php dengan sistem server localhost
 - Responsive desain
 
 
-## 💖 pembuat
+## 💖 Pembuat
 **Semua kode pada aplikasi Website Satu Forum di buat oleh Bima Maarschal**
-Klik bintang
+
+**Klik bintang untuk support**
 
 Hubungi bimamaarschal@gmail.com untuk informasi yang dibutuhkan.
 Terima kasih.
