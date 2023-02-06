@@ -23,7 +23,7 @@ $ID = "ID"
 
 <?php
 
-$id1 = $_GET['id11'];
+$id1 = $_GET['id10'];
 
 $datalihat = mysqli_query($con, "SELECT * FROM tulispengguna WHERE idtulis='$id1' ");
  
@@ -38,28 +38,3 @@ while($dataslihat = mysqli_fetch_array($datalihat))
 }
 ?>
 <!-- Akhir Ambil ID -->
-
-
-
-<!-- Awal edit data -->
-<?php
-
-if (isset($_POST['submit'])) {
-    $idtulis = $idtulis_edit;
-    $tanggal = $tanggal_edit;
-    $judul = $_POST['judul'];
-    $isi = $_POST['isi'];
-    $isi2 = $_POST['isi2'];
-    $pengguna = $pengguna_edit;
-
-    $result = mysqli_query($con, "UPDATE tulispengguna SET idtulis='$idtulis', tanggal='$tanggal', judul='$judul', isi='$isi', isi2='$isi2', pengguna='$pengguna'  WHERE idtulis='$idtulis'");
-
-    echo "
-        <script>
-            alert('data berhasil diedit');
-            document.location.href = '../tulis_pengguna/tulis_pengguna.php';
-        </script>
-            ";
-}
-?>
-<!-- Akhir edit data -->
