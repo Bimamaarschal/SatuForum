@@ -41,6 +41,9 @@
     }
     $idsession = mysqli_query($con, "SELECT * FROM pengguna WHERE email='$_SESSION[email]'");
     $datas = mysqli_fetch_array($idsession);
+
+    
+
     ?>
     <!-- Akhir Ambil Data -->
 
@@ -96,19 +99,23 @@
                                         <th scope="col">Id</th>
                                         <th scope="col">Judul</th>
                                         <th scope="col">Tanggal</th>
-                                        <th scope="col">Pengguna</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">Id1223</th>
-                                        <td>Dasar PHP</td>
-                                        <td>20 Desember 2023</td>
-                                        <td>Bima</td>
-                                        <td><a class="text-dark" href="#"><i class="fa fa-file"></i></a>&nbsp;<a class="text-dark" href="#"><i class="fa fa-edit"></i></a>&nbsp;<a class="text-dark" href="#"><i class="fa fa-trash"></i></a></td>
-                                    </tr>
-                                </tbody>
+                                <?php  
+    $datatabel = mysqli_query($con, "SELECT * FROM tulispengguna WHERE pengguna='$datas[nama]'");
+    while($data_tulis = mysqli_fetch_array($datatabel)) {  
+        echo "<tbody>";       
+        echo "<tr>";
+        echo "<td>".$data_tulis['idtulis']."</td>";
+        echo "<td>".$data_tulis['judul']."</td>";
+        echo "<td>".$data_tulis['tanggal']."</td>";  
+        echo "<td><a class='text-dark' href='#'><i class='fa fa-file'></i></a>&nbsp;<a class='text-dark' href='#'><i class='fa fa-edit'></i></a>&nbsp;<a class='text-dark' href='#'><i class='fa fa-trash'></i></a></td>
+        </tr>
+        </tbody>
+        ";        
+    }
+    ?>
                             </table>
                         </div>
 

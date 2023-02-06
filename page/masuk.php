@@ -55,6 +55,18 @@
     ?>
     <!-- Akhir Ditolak -->
 
+    <!-- Awal Daftar Berhasil -->
+    <?php
+    if (isset($_GET['pesan'])) {
+        if ($_GET['pesan'] == "daftarberhasil") {
+            echo "
+            <div class='demo-banner py-3 text-white text-center font-weight-bold theme-bg-secondary text-white'>Selamat anda berhasil mendaftar, Silahkan login untuk memulai menulis.
+        </div>";
+        }
+    }
+    ?>
+    <!-- Akhir Daftar Berhasil -->
+
 
     <!-- Awal Header -->
     <header class="header">
@@ -87,7 +99,7 @@
                     <div class="site-tagline mb-3" style="font-size: 12pt;">Untuk dapat menulis di dalam fitur blog
                         bersama SatuForum, anda harus masuk pengguna.</div>
                     <br>
-                    <a href="../index.php"><span class="more-arrow">&larr;</span> Kembali</a> | <a href="#">Saya belum
+                    <a href="../index.php"><span class="more-arrow">&larr;</span> Kembali</a> | <a href="daftar.php">Saya belum
                         memiliki akun <span class="more-arrow">&rarr;</span></a>
                 </div>
                 <div class="form-wrapper shadow-lg single-col-max-width mx-auto p-5">

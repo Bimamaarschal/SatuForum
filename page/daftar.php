@@ -36,13 +36,24 @@
     if (isset($_GET['pesan'])) {
         if ($_GET['pesan'] == "gagal") {
             echo "
-            <div class='demo-banner py-3 text-white text-center font-weight-bold theme-bg-secondary text-white'>Beritakan secara
-            eksklusif dan kabarkan informasi secara cepat.
+            <div class='demo-banner py-3 text-white text-center font-weight-bold theme-bg-secondary text-white'>Anda gagal masuk, cek email atau password lalu masuk kembali.
         </div>";
         }
     }
     ?>
     <!-- Akhir Gagal -->
+
+    <!-- Awal Ditolak -->
+    <?php
+    if (isset($_GET['pesan'])) {
+        if ($_GET['pesan'] == "ditolak") {
+            echo "
+            <div class='demo-banner py-3 text-white text-center font-weight-bold theme-bg-secondary text-white'>Anda perlu masuk, untuk dapat ke tampilan tulis blog.
+        </div>";
+        }
+    }
+    ?>
+    <!-- Akhir Ditolak -->
 
 
     <!-- Awal Header -->
@@ -71,35 +82,42 @@
         <div class="container">
             <div class="row figure-holder" style="padding-bottom: 150px;">
                 <div class="col-12 col-md-6 pt-3 pt-md-4" style="padding-bottom: 80px;">
-                    <h2 class="site-headline font-weight-bold mt-lg-5 pt-lg-5">Masuk Pengguna <br>
+                    <h2 class="site-headline font-weight-bold mt-lg-5 pt-lg-5">Daftar Pengguna <br>
                     </h2>
-                    <div class="site-tagline mb-3" style="font-size: 12pt;">Untuk dapat menulis di dalam fitur blog
-                        bersama SatuForum, anda harus masuk pengguna.</div>
+                    <div class="site-tagline mb-3" style="font-size: 12pt;">Anda dapat mendaftar akun, untuk memulai menulis di fitur blog bersama SatuForum.</div>
                     <br>
-                    <a href="../index.php"><span class="more-arrow">&larr;</span> Kembali</a> | <a href="#">Saya belum
+                    <a href="../index.php"><span class="more-arrow">&larr;</span>Batal</a> | <a href="masuk.php">Saya sudah
                         memiliki akun <span class="more-arrow">&rarr;</span></a>
                 </div>
                 <div class="form-wrapper shadow-lg single-col-max-width mx-auto p-5">
-                    <form name="frmUser" id="forum-form" class="forum-form" method="post" action="fct_masuk.php">
-                        <h3 class="text-left mb-4">Masuk</h3>
+                <form name="frmUser" id="forum-form" class="forum-form" method="post" action="fungsi/fct_daftar.php">
+                        <h3 class="text-left mb-4">Daftar</h3>
                         <div class="row g-3">
+
                             <div class="col-md-12" style="padding-bottom: 20px;">
-                                <label class="sr-only" for="nama">Nama</label>
+                                <div class="col-12">
+						            <div style="font-size: 12pt;" class="site-tagline mb-2">Nama</div>
+						        </div>
                                 <input type="text" class="form-control" name="nama" id="nama"
-                                    placeholder="Silahkan masukan nama anda" minlength="2" required=""
-                                    aria-required="true">
-                            </div>
-                            <div class="col-md-6" style="padding-bottom: 20px;">
-                                <label class="sr-only" for="email">email</label>
-                                <input type="email" class="form-control" name="email" id="email"
-                                    placeholder="Silahkan masukan email anda" minlength="2" required=""
+                                    placeholder="Isi dengan nama anda secara lengkap" minlength="2" required=""
                                     aria-required="true">
                             </div>
 
                             <div class="col-md-6" style="padding-bottom: 20px;">
-                                <label class="sr-only" for="password">password</label>
+                                <div class="col-6">
+						            <div style="font-size: 12pt;" class="site-tagline mb-2">Email</div>
+						        </div>
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Isi dengan email aktif anda" minlength="2" required=""
+                                    aria-required="true">
+                            </div>
+
+                            <div class="col-md-6" style="padding-bottom: 20px;">
+                                <div class="col-6">
+						            <div style="font-size: 12pt;" class="site-tagline mb-2">Password Baru</div>
+						        </div>
                                 <input type="password" class="form-control" id="password" name="password"
-                                    placeholder="Silahkan masukan password anda" minlength="2" required=""
+                                    placeholder="***" minlength="2" required=""
                                     aria-required="true">
                             </div>
                             <div class="col-12">
