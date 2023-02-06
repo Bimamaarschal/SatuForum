@@ -89,7 +89,7 @@
                                 Tulisan</a>
                         </div>
                         <div class="col-6">
-                        <a href="../blog.php" class="btn w-100 btn-secondary py-2">Lihat
+                            <a href="../blog.php" class="btn w-100 btn-secondary py-2">Lihat
                                 Blog</a>
                         </div>
 

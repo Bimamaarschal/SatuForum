@@ -1,10 +1,10 @@
 <!-- PHP - Fungsi -->
 
 <!-- Awal Koneksi -->
-<?php 
-$con = mysqli_connect("localhost","root","","satuforum");
-if (mysqli_connect_errno()){
-	echo "Koneksi database gagal : " . mysqli_connect_error();
+<?php
+$con = mysqli_connect("localhost", "root", "", "satuforum");
+if (mysqli_connect_errno()) {
+    echo "Koneksi database gagal : " . mysqli_connect_error();
 }
 ?>
 <!-- Akhir Koneksi -->
@@ -46,5 +46,3 @@ if ($cek > 0) {
 }
 ?>
 <!-- Akhir Masuk Pengguna -->
-
-

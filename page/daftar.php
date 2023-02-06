@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,20 +83,23 @@
                 <div class="col-12 col-md-6 pt-3 pt-md-4" style="padding-bottom: 80px;">
                     <h2 class="site-headline font-weight-bold mt-lg-5 pt-lg-5">Daftar Pengguna <br>
                     </h2>
-                    <div class="site-tagline mb-3" style="font-size: 12pt;">Anda dapat mendaftar akun, untuk memulai menulis di fitur blog bersama SatuForum.</div>
+                    <div class="site-tagline mb-3" style="font-size: 12pt;">Anda dapat mendaftar akun, untuk memulai
+                        menulis di fitur blog bersama SatuForum.</div>
                     <br>
-                    <a href="../index.php"><span class="more-arrow">&larr;</span>Batal</a> | <a href="masuk.php">Saya sudah
+                    <a href="../index.php"><span class="more-arrow">&larr;</span>Batal</a> | <a href="masuk.php">Saya
+                        sudah
                         memiliki akun <span class="more-arrow">&rarr;</span></a>
                 </div>
                 <div class="form-wrapper shadow-lg single-col-max-width mx-auto p-5">
-                <form name="frmUser" id="forum-form" class="forum-form" method="post" action="fungsi/fct_daftar.php">
+                    <form name="frmUser" id="forum-form" class="forum-form" method="post"
+                        action="fungsi/fct_daftar.php">
                         <h3 class="text-left mb-4">Daftar</h3>
                         <div class="row g-3">
 
                             <div class="col-md-12" style="padding-bottom: 20px;">
                                 <div class="col-12">
-						            <div style="font-size: 12pt;" class="site-tagline mb-2">Nama</div>
-						        </div>
+                                    <div style="font-size: 12pt;" class="site-tagline mb-2">Nama</div>
+                                </div>
                                 <input type="text" class="form-control" name="nama" id="nama"
                                     placeholder="Isi dengan nama anda secara lengkap" minlength="2" required=""
                                     aria-required="true">
@@ -105,8 +107,8 @@
 
                             <div class="col-md-6" style="padding-bottom: 20px;">
                                 <div class="col-6">
-						            <div style="font-size: 12pt;" class="site-tagline mb-2">Email</div>
-						        </div>
+                                    <div style="font-size: 12pt;" class="site-tagline mb-2">Email</div>
+                                </div>
                                 <input type="email" class="form-control" name="email" id="email"
                                     placeholder="Isi dengan email aktif anda" minlength="2" required=""
                                     aria-required="true">
@@ -114,11 +116,10 @@
 
                             <div class="col-md-6" style="padding-bottom: 20px;">
                                 <div class="col-6">
-						            <div style="font-size: 12pt;" class="site-tagline mb-2">Password Baru</div>
-						        </div>
+                                    <div style="font-size: 12pt;" class="site-tagline mb-2">Password Baru</div>
+                                </div>
                                 <input type="password" class="form-control" id="password" name="password"
-                                    placeholder="***" minlength="2" required=""
-                                    aria-required="true">
+                                    placeholder="***" minlength="2" required="" aria-required="true">
                             </div>
                             <div class="col-12">
                                 <button type="submit" name="submit" value="submit"

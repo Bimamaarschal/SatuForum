@@ -54,13 +54,21 @@
             <div class="row figure-holder" style="padding-bottom: 150px;">
                 <div class="col-12 col-md-6 pt-3 pt-md-4" style="padding-bottom: 80px;">
                     <a href="tulis_pengguna.php"><span class="more-arrow">&larr;</span> kembali</a>
-                    <h2 class="site-headline font-weight-bold mt-lg-5 pt-lg-5"><?php echo $judul_edit;?></h2>
-                    <div class="site-tagline mb-3" style="font-size: 12pt;"><i class="fa fa-users"></i>&nbsp; <?php echo $pengguna_edit;?></div>
+                    <h2 class="site-headline font-weight-bold mt-lg-5 pt-lg-5">
+                        <?php echo $judul_edit; ?>
+                    </h2>
+                    <div class="site-tagline mb-3" style="font-size: 12pt;"><i class="fa fa-users"></i>&nbsp;
+                        <?php echo $pengguna_edit; ?>
+                    </div>
                     <br>
                     <br>
-                    <div class="site-tagline mb-3" style="font-size: 12pt;"><?php echo $isi_edit;?></div>
+                    <div class="site-tagline mb-3" style="font-size: 12pt;">
+                        <?php echo $isi_edit; ?>
+                    </div>
                     <br>
-                    <div class="site-tagline mb-3" style="font-size: 12pt;"><?php echo $isi2_edit;?></div>
+                    <div class="site-tagline mb-3" style="font-size: 12pt;">
+                        <?php echo $isi2_edit; ?>
+                    </div>
                 </div>
 
             </div>
@@ -89,8 +97,8 @@
     </footer>
     <!-- Akhir Footer-->
 
-     <!-- Javascript -->
-     <script type="text/javascript" src="../../assets/plugins/jquery-3.3.1.min.js"></script>
+    <!-- Javascript -->
+    <script type="text/javascript" src="../../assets/plugins/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../../assets/plugins/popper.min.js"></script>
     <script type="text/javascript" src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- Page Specific JS -->

@@ -45,59 +45,60 @@
     </header>
     <!-- Akhir Header -->
 
-    	<!-- Awal Blog-->
-	<section class="benefits-section">
+    <!-- Awal Blog-->
+    <section class="benefits-section">
 
-<div class="container py-lg-5">
-<a href="../index.php"><span class="more-arrow">&larr;</span> Kembali</a>
-<br>
-    <h3 class="mb-5 text-center font-weight-bold">Blog</h3>
-    <div class="col-12 col-md-12 col-xl-12 pr-xl-3 pt-md-3">
-    <?php
-            require_once __DIR__ . '/../lib/DataSource.php';
-            $database = new DataSource();
-            $data_blog = "SELECT * FROM tulispengguna ORDER BY idtulis DESC";
-            $blog = $database->select($data_blog);
-            ?>
-            <?php
-            sort($blog);
-            if (is_array($blog) || is_object($blog)) {
-                foreach ($blog as $key => $value) {
-                    ?>
-        <div class="card rounded border-0 shadow-lg  mb-5">
-            
-                    <div class="card-body p-4">
-                        <h5 class="card-title"><i
-                                class="far fa fa-folder-open mr-2 mr-lg-3 text-primary fa-lg fa-fw"></i>
-                            <?php echo $blog[$key]["judul"]; ?>
-                        </h5>
-                        <div class="source media">
-                            <div class="source-info media-body pt-1">
-                                <div><i class="fa fa-user-circle"></i>&nbsp;
-                                    <?php echo $blog[$key]["pengguna"]; ?> &nbsp; <i class="fa fa-calendar"></i>&nbsp;
-                                    <?php echo $blog[$key]["tanggal"]; ?>
-                                    
+        <div class="container py-lg-5">
+            <a href="../index.php"><span class="more-arrow">&larr;</span> Kembali</a>
+            <br>
+            <h3 class="mb-5 text-center font-weight-bold">Blog</h3>
+            <div class="col-12 col-md-12 col-xl-12 pr-xl-3 pt-md-3">
+                <?php
+                require_once __DIR__ . '/../lib/DataSource.php';
+                $database = new DataSource();
+                $data_blog = "SELECT * FROM tulispengguna ORDER BY idtulis DESC";
+                $blog = $database->select($data_blog);
+                ?>
+                <?php
+                sort($blog);
+                if (is_array($blog) || is_object($blog)) {
+                    foreach ($blog as $key => $value) {
+                        ?>
+                        <div class="card rounded border-0 shadow-lg  mb-5">
+
+                            <div class="card-body p-4">
+                                <h5 class="card-title"><i
+                                        class="far fa fa-folder-open mr-2 mr-lg-3 text-primary fa-lg fa-fw"></i>
+                                    <?php echo $blog[$key]["judul"]; ?>
+                                </h5>
+                                <div class="source media">
+                                    <div class="source-info media-body pt-1">
+                                        <div><i class="fa fa-user-circle"></i>&nbsp;
+                                            <?php echo $blog[$key]["pengguna"]; ?> &nbsp; <i class="fa fa-calendar"></i>&nbsp;
+                                            <?php echo $blog[$key]["tanggal"]; ?>
+
+                                        </div>
+                                    </div>
                                 </div>
+                                <p class="card-text"><br>
+                                    <?php echo $blog[$key]["isi"]; ?>
+                                </p>
+
+                                <a href="baca_blog.php?id10=<?php echo $blog[$key]["idtulis"]; ?>">Baca selanjutnya <span
+                                        class="more-arrow">&rarr;</span></a>
                             </div>
+
                         </div>
-                        <p class="card-text"><br>
-                            <?php echo $blog[$key]["isi"]; ?>
-                        </p>
-
-                        <a href="baca_blog.php?id10=<?php echo $blog[$key]["idtulis"]; ?>">Baca selanjutnya <span class="more-arrow">&rarr;</span></a>
-                    </div>
-                
-        </div>
-        <?php
+                        <?php
+                    }
                 }
-            }
-            ?>
-    </div>
-</div>
-</div>
+                ?>
+            </div>
+        </div>
+        </div>
 
-</section>
-<!-- Akhir Blog-->
+    </section>
+    <!-- Akhir Blog-->
 
 
     <!-- Awal Kata-kata-->
@@ -121,8 +122,8 @@
     </footer>
     <!-- Akhir Footer-->
 
-     <!-- Javascript -->
-     <script type="text/javascript" src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <!-- Javascript -->
+    <script type="text/javascript" src="../assets/plugins/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../assets/plugins/popper.min.js"></script>
     <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- Page Specific JS -->

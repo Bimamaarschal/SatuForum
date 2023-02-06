@@ -1,4 +1,3 @@
-
 <!-- Awal Ambil Data -->
 <?php
 $con = mysqli_connect("localhost", "root", "", "satuforum");

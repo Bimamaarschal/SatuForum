@@ -26,9 +26,8 @@ $ID = "ID"
 $id1 = $_GET['id11'];
 
 $datalihat = mysqli_query($con, "SELECT * FROM tulispengguna WHERE idtulis='$id1' ");
- 
-while($dataslihat = mysqli_fetch_array($datalihat))
-{
+
+while ($dataslihat = mysqli_fetch_array($datalihat)) {
     $idtulis_edit = $dataslihat['idtulis'];
     $tanggal_edit = $dataslihat['tanggal'];
     $judul_edit = $dataslihat['judul'];

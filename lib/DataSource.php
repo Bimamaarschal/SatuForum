@@ -1,21 +1,21 @@
 <?php
 class DataSource
-{ 
+{
     const HOST = 'localhost';
-    
+
     const USERNAME = 'root';
-    
+
     const PASSWORD = '';
-    
+
     const DATABASENAME = 'satuforum';
-    
+
     private $connection;
 
     function __construct()
     {
         $this->connection = $this->getConnection();
     }
-    
+
     /**
      * 
      *
@@ -24,15 +24,15 @@ class DataSource
     public function getConnection()
     {
         $connection = new \mysqli(self::HOST, self::USERNAME, self::PASSWORD, self::DATABASENAME);
-        
+
         if (mysqli_connect_errno()) {
             trigger_error("Kami melihat ada masalah dengan menghubungkan ke database dengan MySQLi.");
         }
-        
+
         $connection->set_charset("utf8");
         return $connection;
     }
-    
+
     /**
      * 
      *
@@ -50,7 +50,7 @@ class DataSource
         }
         return $connection;
     }
-    
+
     /**
      * 
      *
@@ -62,15 +62,16 @@ class DataSource
     {
         $paramValueReference = null;
         $paramValueReference[] = & $paramType;
-        for ($i = 0; $i < count($paramArray); $i ++) {
+        for ($i = 0; $i < count($paramArray); $i++) {
             $paramValueReference[] = & $paramArray[$i];
         }
-        call_user_func_array(array(
-            $statement,
-            'bind_param'
-        ), $paramValueReference);
+        call_user_func_array(
+            array(
+                $statement,
+                'bind_param'
+            ), $paramValueReference);
     }
-    
+
     /**
      *
      *
@@ -82,13 +83,13 @@ class DataSource
     public function execute($query, $paramType = "", $paramArray = array())
     {
         $statement = $this->connection->prepare($query);
-        if (! empty($paramType) && ! empty($paramArray)) {
+        if (!empty($paramType) && !empty($paramArray)) {
             $this->bindQueryParams($statement, $paramType, $paramArray);
         }
         $statement->execute();
         return $statement;
     }
-    
+
     /**
      * 
      *
@@ -101,7 +102,7 @@ class DataSource
     {
         $statement = $this->execute($query, $paramType, $paramArray);
         $result = $statement->get_result();
-        
+
         if ($result->num_rows > 0) {
             $resultset = null;
             while ($row = $result->fetch_assoc()) {
@@ -110,27 +111,27 @@ class DataSource
             return $resultset;
         }
     }
-    
+
     public function insert($query, $paramType, $paramArray)
     {
         $statement = $this->execute($query, $paramType, $paramArray);
         return $statement->insert_id;
     }
-    
+
     public function update($query, $paramType, $paramArray)
     {
         $statement = $this->execute($query, $paramType, $paramArray);
         $affectedRows = $statement->affected_rows;
         return $affectedRows;
     }
-    
+
     public function delete($query, $paramType, $paramArray)
     {
         $statement = $this->execute($query, $paramType, $paramArray);
         $affectedRows = $statement->affected_rows;
         return $affectedRows;
     }
-    
+
     public function getRecordCount($query, $paramType = "", $paramArray = array())
     {
         $statement = $this->execute($query, $paramType, $paramArray);
