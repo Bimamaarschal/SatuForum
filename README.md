@@ -60,7 +60,7 @@ Jalankan file index.php dengan sistem server localhost
 
 ## 💖 Pembuat
 **Semua kode pada aplikasi Website Satu Forum di buat oleh Bima Maarschal**
-
+**SatuForum Memiliki dokumentasi yang dapat di akses pada link footer**
 **Klik bintang untuk support**
 
 Hubungi bimamaarschal@gmail.com untuk informasi yang dibutuhkan.
