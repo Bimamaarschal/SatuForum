@@ -8,6 +8,7 @@
   <img src="assets/images/readme/logo.png" width="50" alt="">
   <p align="center">
     <strong>Semua Kode terdokumentasi di <a href="https://github.com/Bimamaarschal/SatuForum">https://github.com/Bimamaarschal/SatuForum</a></strong>.
+    <strong>Dokumentasi penelitian dan analisis pengembangan <a href="https://drive.google.com/drive/folders/1YoYftW8rtHfVHIZWBtw3ICJhTJppN_9b?usp=sharing">Gdrive</a></strong>.
   </p>
 </p>
 
