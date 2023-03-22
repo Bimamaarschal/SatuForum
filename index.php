@@ -303,7 +303,9 @@ $result = $database->select($sql);
 		<div class="footer-bottom text-center pb-5">
 			<small class="copyright">Dibuat Oleh : Bima Maarschal &nbsp; | &nbsp; <a
 					href="https://github.com/Bimamaarschal/SatuForum">Code : <i class="fab fa-github fa-fw"
-						style="color: #57B147;"></i>Bimamaarschal</a></small>
+						style="color: #57B147;"></i>Bimamaarschal</a> &nbsp; | &nbsp;  <a
+					href="https://github.com/Bimamaarschal/SatuForum">Doc : 	<i class="fa fa-book"
+						style="color: #57B147;"></i> Link</a> </small>
 		</div>
 	</footer>
 	<!-- Akhir Footer-->
